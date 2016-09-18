@@ -12,9 +12,25 @@ dependencies {
     testCompile 'org.seleniumhq.selenium:selenium-chrome-driver:2.53.1'
 }
 
-test.dependsOn 'initWebDrivers'
 
-task('initWebDrivers') << {
-    test {systemProperty 'phantomjs.binary.path', './drivers/phantomjs-2.1.1-macosx/bin/phantomjs'}
-    test {systemProperty 'webdriver.chrome.driver', './drivers/chrome-2.24-macosx/chromedriver'}
+task testChrome {
+    finalizedBy 'test'
+    doFirst {
+        test {
+            systemProperty 'webdriver.chrome.driver', './drivers/chrome-2.24-macosx/chromedriver'
+            systemProperty 'geb.env', 'chrome'
+            outputs.upToDateWhen { false }
+        }
+    }
+}
+
+task testPhantomJs {
+    finalizedBy 'test'
+    doFirst {
+        test {
+            systemProperty 'phantomjs.binary.path', './drivers/phantomjs-2.1.1-macosx/bin/phantomjs'
+            systemProperty 'geb.env', 'phantomjs'
+            outputs.upToDateWhen { false }
+        }
+    }
 }
