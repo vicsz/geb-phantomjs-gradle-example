@@ -1,5 +1,5 @@
 #Instructions
 
-1. Download PhantomJS exectuable from http://phantomjs.org/download.html.
-2. Place in project directory @ /phantomjs-2.1.1-macosx/
-3. Run #gradle test
+1. Ensure current JDK is installed (nothing else is required -- other dependencies will automatically download )
+2. To run tests with Headless Browswer (PhantomJS) run: ./gradlew testPhantomJs
+3. To tun tests with Chrome run: ./gradlew test Chrome
