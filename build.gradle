@@ -7,8 +7,13 @@ repositories {
 dependencies {
     testCompile 'junit:junit:4.12'
     testCompile 'com.codeborne:phantomjsdriver:1.2.1'
+    testCompile 'org.seleniumhq.selenium:selenium-chrome-driver:2.53.1'
 }
 
-test{
-    systemProperty 'phantomjs.binary.path', './phantomjs-2.1.1-macosx/bin/phantomjs'
+test.dependsOn 'initWebDrivers'
+
+task('initWebDrivers') << {
+    test {systemProperty 'phantomjs.binary.path', './phantomjs-2.1.1-macosx/bin/phantomjs'}
+    test {systemProperty 'webdriver.chrome.driver', './chrome-2.24-macosx/chromedriver'}
+
 }
