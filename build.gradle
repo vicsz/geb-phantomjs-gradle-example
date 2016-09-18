@@ -15,7 +15,6 @@ dependencies {
 test.dependsOn 'initWebDrivers'
 
 task('initWebDrivers') << {
-    test {systemProperty 'phantomjs.binary.path', './phantomjs-2.1.1-macosx/bin/phantomjs'}
-    test {systemProperty 'webdriver.chrome.driver', './chrome-2.24-macosx/chromedriver'}
-
+    test {systemProperty 'phantomjs.binary.path', './drivers/phantomjs-2.1.1-macosx/bin/phantomjs'}
+    test {systemProperty 'webdriver.chrome.driver', './drivers/chrome-2.24-macosx/chromedriver'}
 }

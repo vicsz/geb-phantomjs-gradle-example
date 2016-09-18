@@ -4,11 +4,16 @@ import geb.Browser
 public class TestExample {
 
     @Test
-    public void testGeb() {
+    public void wikipediaNavigationTest() {
 
         Browser.drive {
-            go "http://www.google.com"
+            go "http://www.wikipedia.org"
 
+            $("input", name: "search").value("test")
+
+            $("button", type: "submit").click()
+
+            assert title == "Test - Wikipedia, the free encyclopedia"
         }
     }
 }
