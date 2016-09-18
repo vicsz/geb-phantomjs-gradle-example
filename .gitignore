@@ -2,3 +2,4 @@
 **/build
 build/*
 .gradle/*
+phantomjs-2.1.1-macosx/*

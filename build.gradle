@@ -5,5 +5,10 @@ repositories {
 }
 
 dependencies {
-    compile("com.codeborne:phantomjsdriver:1.2.1")
+    testCompile 'junit:junit:4.12'
+    testCompile 'com.codeborne:phantomjsdriver:1.2.1'
+}
+
+test{
+    systemProperty 'phantomjs.binary.path', './phantomjs-2.1.1-macosx/bin/phantomjs'
 }

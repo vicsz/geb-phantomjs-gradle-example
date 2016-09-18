@@ -1,11 +1,14 @@
+import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
  
-public class Example {
+public class TestExample {
 
-    public static void main(String[] args) {
+    @Test
+    public void testPhantomJs() {
+
         WebDriver driver = new PhantomJSDriver();
         driver.get("http://www.google.com");
 
@@ -14,6 +17,7 @@ public class Example {
         element.submit();
 
         System.out.println("Page title is: " + driver.getTitle());
+
 
         driver.quit();
     }
