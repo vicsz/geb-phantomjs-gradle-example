@@ -1,7 +1,7 @@
 import org.junit.Test
 import geb.Browser
 
-public class TestExample {
+public class WikipediaExample {
 
     @Test
     public void wikipediaNavigationTest() {
