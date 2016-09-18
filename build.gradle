@@ -1,4 +1,5 @@
 apply plugin: 'groovy'
+apply from: "webdriver.gradle"
 
 repositories {
     mavenCentral()
@@ -8,29 +9,6 @@ dependencies {
     testCompile 'org.codehaus.groovy:groovy-all:2.4.3'
     testCompile 'org.gebish:geb-core:0.9.3'
     testCompile 'junit:junit:4.12'
-    testCompile 'com.codeborne:phantomjsdriver:1.2.1'
-    testCompile 'org.seleniumhq.selenium:selenium-chrome-driver:2.53.1'
 }
 
 
-task testChrome {
-    finalizedBy 'test'
-    doFirst {
-        test {
-            systemProperty 'webdriver.chrome.driver', './drivers/chrome-2.24-macosx/chromedriver'
-            systemProperty 'geb.env', 'chrome'
-            outputs.upToDateWhen { false }
-        }
-    }
-}
-
-task testPhantomJs {
-    finalizedBy 'test'
-    doFirst {
-        test {
-            systemProperty 'phantomjs.binary.path', './drivers/phantomjs-2.1.1-macosx/bin/phantomjs'
-            systemProperty 'geb.env', 'phantomjs'
-            outputs.upToDateWhen { false }
-        }
-    }
-}
