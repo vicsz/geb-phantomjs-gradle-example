@@ -4,8 +4,7 @@ import org.openqa.selenium.phantomjs.PhantomJSDriver
 //Default Driver
 driver = { new PhantomJSDriver() }
 
-
-baseUrl = "http://www.flightnetwork.com"
+baseUrl = System.getProperty('baseUrl') ?: "http://www.flightnetwork.com"
 
 environments {
 

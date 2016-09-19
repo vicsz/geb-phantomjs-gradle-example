@@ -86,10 +86,11 @@ task unzipPhantomJs(type: Copy) {
 task testChrome {
     finalizedBy test
     dependsOn unzipChromeDriver
-    doFirst {
+    doLast {
         test {
             systemProperty 'webdriver.chrome.driver', "${buildDir}/webdriver/chromedriver/chromedriver${Os.isFamily(Os.FAMILY_WINDOWS)?'.exe':''}"
             systemProperty 'geb.env', 'chrome'
+            systemProperty 'baseUrl', project.baseUrl
             outputs.upToDateWhen { false }
         }
     }
@@ -98,10 +99,11 @@ task testChrome {
 task testPhantomJs {
     finalizedBy test
     dependsOn unzipPhantomJs
-    doFirst {
+    doLast {
         test {
             systemProperty 'phantomjs.binary.path', "$buildDir/webdriver/phantomjs/bin/phantomjs${Os.isFamily(Os.FAMILY_WINDOWS)?'.exe':''}"
             systemProperty 'geb.env', 'phantomjs'
+            systemProperty 'baseUrl', project.baseUrl
             outputs.upToDateWhen { false }
         }
     }
