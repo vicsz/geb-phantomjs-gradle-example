@@ -11,3 +11,5 @@
 Default WebDriver (Chrome or PhantomJs) is configure in the GebConfig.groovy file in resources.
 
 Example for running individual tests from the commandline: gradle testPhantomJs -Dtest.single=WikipediaExample
+
+For future reference, consider test filtering in gradle i.e. : http://stackoverflow.com/questions/22505533/how-to-run-a-one-test-class-only-on-gradle
