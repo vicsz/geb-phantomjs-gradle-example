@@ -90,7 +90,7 @@ task testChrome {
         test {
             systemProperty 'webdriver.chrome.driver', "${buildDir}/webdriver/chromedriver/chromedriver${Os.isFamily(Os.FAMILY_WINDOWS)?'.exe':''}"
             systemProperty 'geb.env', 'chrome'
-            systemProperty 'baseUrl', project.baseUrl
+            systemProperty 'baseUrl', project.findProperty('baseUrl')
             outputs.upToDateWhen { false }
         }
     }
@@ -103,7 +103,7 @@ task testPhantomJs {
         test {
             systemProperty 'phantomjs.binary.path', "$buildDir/webdriver/phantomjs/bin/phantomjs${Os.isFamily(Os.FAMILY_WINDOWS)?'.exe':''}"
             systemProperty 'geb.env', 'phantomjs'
-            systemProperty 'baseUrl', project.baseUrl
+            systemProperty 'baseUrl', project.findProperty('baseUrl')
             outputs.upToDateWhen { false }
         }
     }
