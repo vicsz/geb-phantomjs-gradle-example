@@ -19,6 +19,9 @@ public class FlightNetworkExample {
             }
 
             assert title == "Book your flight to Toronto, ON, Canada"
+
+            $("input", 0, class:"resultBtn").click() //Confirm flight
+
         }
     }
 }
