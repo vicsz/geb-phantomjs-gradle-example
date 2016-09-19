@@ -1,5 +1,5 @@
-import org.junit.Test
 import geb.Browser
+import org.junit.Test
 
 public class WikipediaExample {
 
