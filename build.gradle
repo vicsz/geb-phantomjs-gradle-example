@@ -12,3 +12,9 @@ dependencies {
 }
 
 defaultTasks 'testPhantomJs'
+
+test {
+    testLogging {
+        exceptionFormat = 'full'
+    }
+}
