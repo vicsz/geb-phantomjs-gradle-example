@@ -13,7 +13,7 @@ public class WikipediaExample {
 
             $("button", type: "submit").click()
 
-            assert title == "Test - Wikipedia, the free encyclopedia"
+            assert title == "Test - Wikipedia"
         }
     }
 }
